@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+    api:
+        container_name: ws_api
+        build: ./docker/api
+        command: npm run start
+        ports:
+            - "8081:80"
+        links:
+            - mysql
+        volumes:
+            - .:/usr/src/app/
+    mysql:
+        container_name: ws_twitch_api_db
+        image: mariadb:10.3
+        restart: always
+        environment:
+          - MYSQL_ROOT_PASSWORD=root
+          - MYSQL_USER=ws
+          - MYSQL_PASSWORD=ws42
+          - MYSQL_DATABASE=ws_aggregate_storage
+        ports:
+          - "3306:3306"
+        volumes:
+          - ~/.docker/var/lib/mysql:/var/lib/mysql:rw
+    maildev:
+        image: "djfarrelly/maildev"
+        ports:
+          - "1080:80"
+          - "1025:25"

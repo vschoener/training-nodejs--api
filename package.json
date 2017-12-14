@@ -1,0 +1,38 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Wonderstream API",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon -L app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wonderstream/api.git"
+  },
+  "keywords": [
+    "API"
+  ],
+  "author": "Vincent Schoener",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wonderstream/api/issues"
+  },
+  "homepage": "https://github.com/wonderstream/api#readme",
+  "devDependencies": {
+    "babel-plugin-module-resolver": "^3.0.0",
+    "eslint": "^4.13.0",
+    "nodemon": "^1.12.5"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.1",
+    "sequelize": "^4.28.0",
+    "sequelize-cli": "^3.2.0",
+    "winston": "^2.4.0"
+  }
+}

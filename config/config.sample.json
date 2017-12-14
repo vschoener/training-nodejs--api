@@ -1,0 +1,13 @@
+{
+    "development": {
+        "database": {
+            "uri": "mysql://user:pass@uri:port/database_name"
+        },
+        "api": {
+            "port": 80
+        },
+        "log": {
+            "lvl": "debug"
+        }
+    }
+}
