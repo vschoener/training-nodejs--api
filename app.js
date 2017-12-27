@@ -3,6 +3,7 @@ const config = require('./config/config.json')[env];
 const logger = require('winston');
 const httpLogger = require('morgan');
 const express = require('express');
+const cors = require('cors'); 
 const bodyParser = require('body-parser');
 const app = express();
 const apiVersionList = ['1'];
@@ -13,6 +14,7 @@ if (db == null) {
     app.exit();
 }
 
+app.use(cors());
 app.set('config', config);
 app.set('db', db);
 app.use(httpLogger('dev'));
